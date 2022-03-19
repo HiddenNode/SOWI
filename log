@@ -1,0 +1,1 @@
+08/02/2022: enabled culling and got a very different result, it seems that with culling enabled all faces are being drawn and that this is not true without culling being enabled i need to check wether the former holds true or not by not drawing some faces
