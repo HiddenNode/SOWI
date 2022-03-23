@@ -12,7 +12,7 @@ int main()
         
     Program::ShaderProgramInfo info;
     info.vsName = "resource/fvertex.vert";
-    info.fsName = "resource/cfragment.frag";
+    info.fsName = "resource/ffragment.frag";
 
     Scene::AttributeProperties::Attribute attributes[] {
     {.name = "position", .size = 4},

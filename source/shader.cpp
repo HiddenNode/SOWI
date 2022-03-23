@@ -161,9 +161,6 @@ namespace sw
             IAProperties.uniformArray[i].UniformLocation = glGetUniformLocation(programObject, IAProperties.uniformArray[i].name.c_str());
         }
 
-        glClearColor(3.0, 3.0, 3.0, 3.0);
-        glEnable(GL_CULL_FACE);
-        glEnable(GL_DEPTH_TEST);
     }
 
     size_t Scene::setCapacity(size_t newCapacity)

@@ -18,6 +18,9 @@ namespace sw
         mWindow.setVerticalSyncEnabled(true);
         glewInit();
         mScene.init();
+        glClearColor(.0f, .0f, .0f, 1.0f);
+        glEnable(GL_CULL_FACE);
+        glEnable(GL_DEPTH_TEST);
         mainThreadId = GetThreadId(GetCurrentThread());
     }
 
@@ -116,7 +119,7 @@ namespace sw
     LightingProgram::LightingProgram(unsigned w, unsigned h, std::string name, ShaderProgramInfo info):
     Program{w, h, name, info}, commandThread{commandThreadFunction, this}, commandHandler{camera}
     {
-        resources.addModel("cube", "resource/monkey.obj", "resource/material1.mtl");
+        resources.addModel("cube", "resource/sphere.obj", "resource/material1.mtl");
         sw::Model& m = resources.getModel("cube");
         numberOfVertices = m.getNumberOfVertices();
         mScene.setCapacity(numberOfVertices);
