@@ -119,7 +119,7 @@ namespace sw
     LightingProgram::LightingProgram(unsigned w, unsigned h, std::string name, ShaderProgramInfo info):
     Program{w, h, name, info}, commandThread{commandThreadFunction, this}, commandHandler{camera}
     {
-        resources.addModel("cube", "resource/sphere.obj", "resource/material1.mtl");
+        resources.addModel("cube", "resource/objects/cube.obj", "resource/materials/material1.mtl");
         sw::Model& m = resources.getModel("cube");
         numberOfVertices = m.getNumberOfVertices();
         mScene.setCapacity(numberOfVertices);
@@ -127,12 +127,15 @@ namespace sw
         vertexData = m.getVertexData();
         colorData = m.getColorData();
         normalData = m.getNormalData();
+        texCoordData = m.getTexCoordData();
 
-        /* m.printModelInfo(); */
+        m.printModelInfo();
         
         dataPointer[0] = vertexData;
         dataPointer[1] = colorData;
         dataPointer[2] = normalData;
+        dataPointer[3] = texCoordData;
+        
 
     }
 

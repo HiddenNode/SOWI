@@ -114,7 +114,8 @@ namespace sw
 
         vertexData = new glm::fvec4[numberOfVertices];
         normalData = new glm::fvec4[numberOfVertices];
-        
+        texCoordData = new glm::fvec2[numberOfVertices];
+
         colorData = new glm::fvec4[numberOfVertices];
         std::fill_n(colorData, numberOfVertices, glm::fvec4{Kd});
 
@@ -132,6 +133,14 @@ namespace sw
             *(normalPointer++) = glm::fvec4 {vn[fref[0].k - 1], 0.f};
             *(normalPointer++) = glm::fvec4 {vn[fref[1].k - 1], 0.f};
             *(normalPointer++) = glm::fvec4 {vn[fref[2].k - 1], 0.f};
+        }
+
+        auto texCoordPointer = texCoordData;
+        for (auto& fref : f)
+        {
+            *(texCoordPointer++) = glm::fvec2 {vt[fref[0].j - 1]};
+            *(texCoordPointer++) = glm::fvec2 {vt[fref[1].j - 1]};
+            *(texCoordPointer++) = glm::fvec2 {vt[fref[2].j - 1]};
         }
 
     }
@@ -166,6 +175,11 @@ namespace sw
     GLfloat* Model::getNormalData()
     {
         return &(normalData[0][0]);
+    }
+
+    GLfloat* Model::getTexCoordData()
+    {
+        return &texCoordData[0][0];
     }
 
     int Model::getNumberOfVertices()

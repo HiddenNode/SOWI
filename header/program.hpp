@@ -84,7 +84,8 @@ namespace sw
         GLfloat* vertexData;
         GLfloat* colorData;
         GLfloat* normalData;
-        GLfloat* dataPointer[3];
+        GLfloat* texCoordData;
+        GLfloat* dataPointer[4];
         sw::SphereCamera camera {{10.f, 0.f, 0.f}, -glm::pi<GLfloat>(), glm::half_pi<GLfloat>()} /* {{10.f, 0.f, 0.f}, {-10.f, 0.f, 0.f}, {0.f, 1.f, 0.f}} */;
         sw::Light light;
         glm::mat4 rot {};

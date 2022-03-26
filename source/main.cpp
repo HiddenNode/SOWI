@@ -11,13 +11,14 @@ int main()
     using namespace sw;
         
     Program::ShaderProgramInfo info;
-    info.vsName = "resource/fvertex.vert";
-    info.fsName = "resource/ffragment.frag";
+    info.vsName = "resource/shaders/perFragment/vertex.vert";
+    info.fsName = "resource/shaders/perFragment/fragment.frag";
 
     Scene::AttributeProperties::Attribute attributes[] {
     {.name = "position", .size = 4},
     {.name = "color",    .size = 4},
     {.name = "normal",   .size = 4},
+    /* {.name = "texCoords",   .size = 2}, */
 
     };
 
@@ -33,6 +34,7 @@ int main()
     {.name = "reflectDefuse",   .type = "vec4"},
     {.name = "reflectSpecular", .type = "vec4"},
     {.name = "shininess",       .type = "float"},
+    {.name = "TexMap",          .type = "sampler2D"},
 
     };
 

@@ -8,6 +8,8 @@
 
 #include <glm/glm.hpp>
 
+#include "texture.hpp"
+
 
 namespace sw
 {
@@ -21,6 +23,7 @@ namespace sw
         GLfloat* getVertexData();
         GLfloat* getColorData();
         GLfloat* getNormalData();
+        GLfloat* getTexCoordData();
         int getNumberOfVertices();
         void printModelInfo();
         friend LightingProgram;
@@ -50,6 +53,7 @@ namespace sw
         glm::fvec4* vertexData;
         glm::fvec4* normalData;
         glm::fvec4* colorData;
+        glm::fvec2* texCoordData;
 
     };
     
@@ -57,10 +61,12 @@ namespace sw
     {
     public:
         int addModel(std::string name, std::string modelFileName, std::string matFileName);
+        int addTexture(std::string name, std::string texureFileName);
         Model& getModel(std::string);
         
     private:
         std::unordered_map<std::string, Model> models {};
+        std::unordered_map<std::string, Texture> textures {};
     };
 }
 
