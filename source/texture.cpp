@@ -1,5 +1,3 @@
-#include "GL/glew.h"
-
 #include "texture.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -15,6 +13,12 @@ namespace sw
         int width, height, nrChannels;
         data = (const void *) stbi_load(fileName.c_str(), &width, &height, &nrChannels, 0);
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-
+        glGenerateMipmap(GL_TEXTURE_2D);
     }
+
+    GLuint Texture::getName()
+    {
+        return name;
+    }
+
 }

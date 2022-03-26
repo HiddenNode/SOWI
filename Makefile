@@ -8,7 +8,7 @@ compiler = C:/msys64/mingw64/bin/g++.exe
 options = -std=c++20 -g
 
 lighting: $(obj)/main.o $(obj)/program.o $(obj)/shader.o $(obj)/shader.o $(obj)/camera.o $(obj)/light.o $(obj)/resourceHandler.o $(obj)/eventHandler.o $(obj)/helper.o $(obj)/commands.o $(obj)/commandHandler.o $(obj)/texture.o
-	g++ $(options) $(obj)/main.o $(obj)/program.o $(obj)/shader.o $(obj)/camera.o $(obj)/light.o $(obj)/resourceHandler.o $(obj)/eventHandler.o $(obj)/helper.o $(obj)/commands.o -o $(bin)/lighting.exe $(obj)/commandHandler.o -lsfml-window-d -lsfml-system-d -lglew32 -lopengl32 -lwinmm -lgdi32 -luser32 $(LIB)
+	g++ $(options) $(obj)/main.o $(obj)/program.o $(obj)/shader.o $(obj)/camera.o $(obj)/light.o $(obj)/resourceHandler.o $(obj)/eventHandler.o $(obj)/helper.o $(obj)/commands.o -o $(bin)/lighting.exe $(obj)/commandHandler.o $(obj)/texture.o -lsfml-window-d -lsfml-system-d -lglew32 -lopengl32 -lwinmm -lgdi32 -luser32 $(LIB)
 $(obj)/main.o: $(src)/main.cpp $(hdr)/program.hpp $(hdr)/helper.hpp
 	g++ $(options) -c $(src)/main.cpp -o $(obj)/main.o $(INCLUDE)
 $(obj)/program.o: $(src)/program.cpp $(hdr)/program.hpp $(hdr)/shader.hpp $(hdr)/eventHandler.hpp

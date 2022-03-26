@@ -19,11 +19,24 @@ namespace sw
         return 0;
     }
 
+    int ResourceHandler::addTexture(std::string name, std::string textureFileName)
+    {
+        textures.emplace(std::piecewise_construct_t {},
+                       std::tuple<std::string> {name},
+                       std::tuple<std::string> {textureFileName});
+        return 0;
+    }
+
     Model& ResourceHandler::getModel(std::string name)
     {
         return models.at(name);
     }
 
+    Texture& ResourceHandler::getTexture(std::string name)
+    {
+        return textures.at(name);
+    }
+    
     Model::Model(std::string fileName, std::string mtlFileName)
     {
         // reading files...

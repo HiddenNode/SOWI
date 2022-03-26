@@ -2,6 +2,7 @@
 
 in vec4 position;
 in vec4 normal;
+in vec2 texCoords;
 uniform mat4 projection;
 uniform mat4 modelView;
 uniform mat4 rot;
@@ -14,7 +15,7 @@ uniform vec4 reflectDefuse;
 uniform vec4 reflectSpecular;
 
 out vec3 N, L, E;
-out vec4 ambientProduct, defuseProduct, specularProduct;
+out vec2 FragTexCoords;
 
 void main()
 {
@@ -25,8 +26,7 @@ void main()
     E = -(modelView * position).xyz;
 
 
-    ambientProduct = lightAmbient * reflectAmbient;
-    defuseProduct = lightDefuse * reflectDefuse;
-    specularProduct = lightSpecular * reflectSpecular;
+
+    FragTexCoords = texCoords;
 
 }

@@ -2,7 +2,7 @@
 #define TEXTURE_HPP
 
 #include <string>
-
+#include "GL/glew.h"
 
 
 namespace sw
@@ -11,6 +11,7 @@ namespace sw
     {
     public:
         Texture(std::string FileName);
+        GLuint getName();
     
     private:
         GLuint name;

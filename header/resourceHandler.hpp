@@ -63,6 +63,7 @@ namespace sw
         int addModel(std::string name, std::string modelFileName, std::string matFileName);
         int addTexture(std::string name, std::string texureFileName);
         Model& getModel(std::string);
+        Texture& getTexture(std::string name);
         
     private:
         std::unordered_map<std::string, Model> models {};

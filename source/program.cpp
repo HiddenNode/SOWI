@@ -120,6 +120,8 @@ namespace sw
     Program{w, h, name, info}, commandThread{commandThreadFunction, this}, commandHandler{camera}
     {
         resources.addModel("cube", "resource/objects/cube.obj", "resource/materials/material1.mtl");
+        resources.addTexture("checkboard", "resource/textures/checkboard.jpeg");
+
         sw::Model& m = resources.getModel("cube");
         numberOfVertices = m.getNumberOfVertices();
         mScene.setCapacity(numberOfVertices);
@@ -188,6 +190,10 @@ namespace sw
         glUniform4fv(properties.getUniformLocation("reflectDefuse"), 1, &(m.Kd[0]));
         glUniform4fv(properties.getUniformLocation("reflectSpecular"), 1, &(m.Ks[0]));
         glUniform1f(properties.getUniformLocation("shininess"), m.Ns);
+
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, resources.getTexture("checkboard").getName());
+        glUniform1i(properties.getUniformLocation("texMap"), 0);
     }
 
     void LightingProgram::processEvents()
