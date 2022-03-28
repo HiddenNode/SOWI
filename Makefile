@@ -7,8 +7,8 @@ LIB = -L C:/Users/kothm/Documents/libs/req/API2/lib
 compiler = C:/msys64/mingw64/bin/g++.exe
 options = -std=c++20 -g
 
-lighting: $(obj)/main.o $(obj)/program.o $(obj)/shader.o $(obj)/shader.o $(obj)/camera.o $(obj)/light.o $(obj)/resourceHandler.o $(obj)/eventHandler.o $(obj)/helper.o $(obj)/commands.o $(obj)/commandHandler.o $(obj)/texture.o
-	g++ $(options) $(obj)/main.o $(obj)/program.o $(obj)/shader.o $(obj)/camera.o $(obj)/light.o $(obj)/resourceHandler.o $(obj)/eventHandler.o $(obj)/helper.o $(obj)/commands.o -o $(bin)/lighting.exe $(obj)/commandHandler.o $(obj)/texture.o -lsfml-window-d -lsfml-system-d -lglew32 -lopengl32 -lwinmm -lgdi32 -luser32 $(LIB)
+lighting: $(obj)/main.o $(obj)/program.o $(obj)/shader.o $(obj)/shader.o $(obj)/camera.o $(obj)/light.o $(obj)/resourceHandler.o $(obj)/eventHandler.o $(obj)/helper.o $(obj)/commands.o $(obj)/commandHandler.o $(obj)/texture.o $(obj)/stb_image.o
+	g++ $(options) $(obj)/main.o $(obj)/program.o $(obj)/shader.o $(obj)/camera.o $(obj)/light.o $(obj)/resourceHandler.o $(obj)/eventHandler.o $(obj)/helper.o $(obj)/commands.o -o $(bin)/lighting.exe $(obj)/commandHandler.o $(obj)/texture.o $(obj)/stb_image.o -lsfml-window-d -lsfml-system-d -lglew32 -lopengl32 -lwinmm -lgdi32 -luser32 $(LIB)
 $(obj)/main.o: $(src)/main.cpp $(hdr)/program.hpp $(hdr)/helper.hpp
 	g++ $(options) -c $(src)/main.cpp -o $(obj)/main.o $(INCLUDE)
 $(obj)/program.o: $(src)/program.cpp $(hdr)/program.hpp $(hdr)/shader.hpp $(hdr)/eventHandler.hpp
@@ -31,5 +31,7 @@ $(obj)/commandHandler.o: $(src)/commandHandler.cpp $(hdr)/commandHandler.hpp $(h
 	g++ $(options) -c $(src)/commandHandler.cpp -o $(obj)/commandHandler.o $(INCLUDE)
 $(obj)/texture.o: $(src)/texture.cpp $(hdr)/texture.hpp $(hdr)/stb_image.h
 	g++ $(options) -c $(src)/texture.cpp -o $(obj)/texture.o $(INCLUDE)
+$(obj)/stb_image.o: $(src)/stb_image.cpp $(hdr)/stb_image.h
+	g++ $(options) -c $(src)/stb_image.cpp -o $(obj)/stb_image.o $(INCLUDE)
 test:
 	g++ $(options) $(src)/test.cpp -o test.exe
