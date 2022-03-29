@@ -121,6 +121,7 @@ namespace sw
     {
         resources.addModel("cube", "resource/objects/cube.obj", "resource/materials/material1.mtl");
         resources.addTexture("checkboard", "resource/textures/checkboard.jpeg");
+        resources.addTexture("checkboards", "resource/textures/checkboard.jpeg");
 
         sw::Model& m = resources.getModel("cube");
         numberOfVertices = m.getNumberOfVertices();
@@ -194,6 +195,10 @@ namespace sw
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, resources.getTexture("checkboard").getName());
         glUniform1i(properties.getUniformLocation("texMap"), 0);
+        
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, resources.getTexture("checkboards").getName());
+        glUniform1i(properties.getUniformLocation("texMapSpecular"), 1);
     }
 
     void LightingProgram::processEvents()

@@ -11,8 +11,8 @@ int main()
     using namespace sw;
         
     Program::ShaderProgramInfo info;
-    info.vsName = "resource/shaders/textured/vertex.vert";
-    info.fsName = "resource/shaders/textured/fragment.frag";
+    info.vsName = "resource/shaders/snMap/vertex.vert";
+    info.fsName = "resource/shaders/snMap/fragment.frag";
 
     Scene::AttributeProperties::Attribute attributes[] {
     {.name = "position", .size = 4},
@@ -35,6 +35,7 @@ int main()
     {.name = "reflectSpecular", .type = "vec4"},
     {.name = "shininess",       .type = "float"},
     {.name = "texMap",          .type = "sampler2D"},
+    {.name = "texMapSpecular",  .type = "sampler2D"},
 
     };
 
