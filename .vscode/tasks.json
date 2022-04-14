@@ -4,7 +4,7 @@
         {
             "label": "make",
             "type": "shell",
-            "command": "make",
+            "command": "cmake --build ./bin",
             "group": {
                 "kind": "build",
                 "isDefault": true
