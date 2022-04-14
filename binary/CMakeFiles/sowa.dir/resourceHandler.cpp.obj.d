@@ -1,4 +1,4 @@
-CMakeFiles/sowa.exe.dir/resourceHandler.cpp.obj: \
+CMakeFiles/sowa.dir/resourceHandler.cpp.obj: \
  C:\Users\kothm\Documents\Projects\API2\source\resourceHandler.cpp \
  C:/msys64/mingw64/include/c++/11.2.0/iterator \
  C:/msys64/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/c++config.h \

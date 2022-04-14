@@ -4,7 +4,7 @@
 # compile CXX with C:/msys64/mingw64/bin/g++.exe
 CXX_DEFINES = 
 
-CXX_INCLUDES = @CMakeFiles/sowa.exe.dir/includes_CXX.rsp
+CXX_INCLUDES = @CMakeFiles/sowa.dir/includes_CXX.rsp
 
 CXX_FLAGS = -std=gnu++20
 

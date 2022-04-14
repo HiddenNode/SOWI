@@ -1,4 +1,4 @@
-CMakeFiles/sowa.exe.dir/helper.cpp.obj: \
+CMakeFiles/sowa.dir/helper.cpp.obj: \
  C:\Users\kothm\Documents\Projects\API2\source\helper.cpp \
  C:/msys64/mingw64/include/c++/11.2.0/filesystem \
  C:/msys64/mingw64/include/c++/11.2.0/bits/fs_fwd.h \

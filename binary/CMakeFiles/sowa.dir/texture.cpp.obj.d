@@ -1,4 +1,4 @@
-CMakeFiles/sowa.exe.dir/texture.cpp.obj: \
+CMakeFiles/sowa.dir/texture.cpp.obj: \
  C:\Users\kothm\Documents\Projects\API2\source\texture.cpp \
  C:/Users/kothm/Documents/Projects/API2/header/texture.hpp \
  C:/msys64/mingw64/include/c++/11.2.0/string \

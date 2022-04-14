@@ -10,7 +10,7 @@ link_directories(C:/Users/kothm/Documents/libs/req/API2/lib)
 
 project(sowa)
 
-add_executable(sowa.exe ${SOURCES} ${HEADER_FILES})
-target_compile_features(sowa.exe PRIVATE cxx_std_20)
-target_include_directories(sowa.exe PRIVATE ${header_folders})
-target_link_libraries(sowa.exe sfml-window-d sfml-system-d glew32 opengl32 winmm gdi32 user32)
+add_executable(sowa ${SOURCES} ${HEADER_FILES})
+target_compile_features(sowa PRIVATE cxx_std_20)
+target_include_directories(sowa PRIVATE ${header_folders})
+target_link_libraries(sowa sfml-window-d sfml-system-d glew32 opengl32 winmm gdi32 user32)

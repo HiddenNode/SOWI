@@ -56,13 +56,13 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\Users\kothm\Documents\Projects\API2\source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\kothm\Documents\Projects\API2\bin
+CMAKE_BINARY_DIR = C:\Users\kothm\Documents\Projects\API2\binary
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/sowa.exe.dir/all
+all: CMakeFiles/sowa.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -70,34 +70,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/sowa.exe.dir/clean
+clean: CMakeFiles/sowa.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/sowa.exe.dir
+# Target rules for target CMakeFiles/sowa.dir
 
 # All Build rule for target.
-CMakeFiles/sowa.exe.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\kothm\Documents\Projects\API2\bin\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target sowa.exe"
-.PHONY : CMakeFiles/sowa.exe.dir/all
+CMakeFiles/sowa.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\kothm\Documents\Projects\API2\binary\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target sowa"
+.PHONY : CMakeFiles/sowa.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/sowa.exe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kothm\Documents\Projects\API2\bin\CMakeFiles 13
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/sowa.exe.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kothm\Documents\Projects\API2\bin\CMakeFiles 0
-.PHONY : CMakeFiles/sowa.exe.dir/rule
+CMakeFiles/sowa.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kothm\Documents\Projects\API2\binary\CMakeFiles 13
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/sowa.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kothm\Documents\Projects\API2\binary\CMakeFiles 0
+.PHONY : CMakeFiles/sowa.dir/rule
 
 # Convenience name for target.
-sowa.exe: CMakeFiles/sowa.exe.dir/rule
-.PHONY : sowa.exe
+sowa: CMakeFiles/sowa.dir/rule
+.PHONY : sowa
 
 # clean rule for target.
-CMakeFiles/sowa.exe.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/clean
-.PHONY : CMakeFiles/sowa.exe.dir/clean
+CMakeFiles/sowa.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/clean
+.PHONY : CMakeFiles/sowa.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

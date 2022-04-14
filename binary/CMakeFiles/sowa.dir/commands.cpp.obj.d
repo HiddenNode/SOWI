@@ -1,4 +1,4 @@
-CMakeFiles/sowa.exe.dir/commands.cpp.obj: \
+CMakeFiles/sowa.dir/commands.cpp.obj: \
  C:\Users\kothm\Documents\Projects\API2\source\commands.cpp \
  C:/msys64/mingw64/include/c++/11.2.0/string \
  C:/msys64/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/c++config.h \

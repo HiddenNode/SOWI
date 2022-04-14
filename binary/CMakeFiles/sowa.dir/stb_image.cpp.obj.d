@@ -1,4 +1,4 @@
-CMakeFiles/sowa.exe.dir/stb_image.cpp.obj: \
+CMakeFiles/sowa.dir/stb_image.cpp.obj: \
  C:\Users\kothm\Documents\Projects\API2\source\stb_image.cpp \
  C:/Users/kothm/Documents/Projects/API2/header/stb_image.h \
  C:/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h \

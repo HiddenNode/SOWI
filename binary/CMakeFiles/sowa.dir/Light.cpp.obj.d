@@ -1,4 +1,4 @@
-CMakeFiles/sowa.exe.dir/Light.cpp.obj: \
+CMakeFiles/sowa.dir/Light.cpp.obj: \
  C:\Users\kothm\Documents\Projects\API2\source\Light.cpp \
  C:/Users/kothm/Documents/Projects/API2/header/light.hpp \
  C:/Users/kothm/Documents/libs/req/API2/include/GL/glew.h \

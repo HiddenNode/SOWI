@@ -59,20 +59,10 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\Users\kothm\Documents\Projects\API2\source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\kothm\Documents\Projects\API2\bin
+CMAKE_BINARY_DIR = C:\Users\kothm\Documents\Projects\API2\binary
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -84,11 +74,21 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kothm\Documents\Projects\API2\bin\CMakeFiles C:\Users\kothm\Documents\Projects\API2\bin\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kothm\Documents\Projects\API2\binary\CMakeFiles C:\Users\kothm\Documents\Projects\API2\binary\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kothm\Documents\Projects\API2\bin\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kothm\Documents\Projects\API2\binary\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sowa.exe
+# Target rules for targets named sowa
 
 # Build rule for target.
-sowa.exe: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 sowa.exe
-.PHONY : sowa.exe
+sowa: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 sowa
+.PHONY : sowa
 
 # fast build rule for target.
-sowa.exe/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/build
-.PHONY : sowa.exe/fast
+sowa/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/build
+.PHONY : sowa/fast
 
 Light.obj: Light.cpp.obj
 .PHONY : Light.obj
 
 # target to build an object file
 Light.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/Light.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/Light.cpp.obj
 .PHONY : Light.cpp.obj
 
 Light.i: Light.cpp.i
@@ -141,7 +141,7 @@ Light.i: Light.cpp.i
 
 # target to preprocess a source file
 Light.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/Light.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/Light.cpp.i
 .PHONY : Light.cpp.i
 
 Light.s: Light.cpp.s
@@ -149,7 +149,7 @@ Light.s: Light.cpp.s
 
 # target to generate assembly for a file
 Light.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/Light.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/Light.cpp.s
 .PHONY : Light.cpp.s
 
 camera.obj: camera.cpp.obj
@@ -157,7 +157,7 @@ camera.obj: camera.cpp.obj
 
 # target to build an object file
 camera.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/camera.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/camera.cpp.obj
 .PHONY : camera.cpp.obj
 
 camera.i: camera.cpp.i
@@ -165,7 +165,7 @@ camera.i: camera.cpp.i
 
 # target to preprocess a source file
 camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/camera.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/camera.cpp.i
 .PHONY : camera.cpp.i
 
 camera.s: camera.cpp.s
@@ -173,7 +173,7 @@ camera.s: camera.cpp.s
 
 # target to generate assembly for a file
 camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/camera.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/camera.cpp.s
 .PHONY : camera.cpp.s
 
 commandHandler.obj: commandHandler.cpp.obj
@@ -181,7 +181,7 @@ commandHandler.obj: commandHandler.cpp.obj
 
 # target to build an object file
 commandHandler.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/commandHandler.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/commandHandler.cpp.obj
 .PHONY : commandHandler.cpp.obj
 
 commandHandler.i: commandHandler.cpp.i
@@ -189,7 +189,7 @@ commandHandler.i: commandHandler.cpp.i
 
 # target to preprocess a source file
 commandHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/commandHandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/commandHandler.cpp.i
 .PHONY : commandHandler.cpp.i
 
 commandHandler.s: commandHandler.cpp.s
@@ -197,7 +197,7 @@ commandHandler.s: commandHandler.cpp.s
 
 # target to generate assembly for a file
 commandHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/commandHandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/commandHandler.cpp.s
 .PHONY : commandHandler.cpp.s
 
 commands.obj: commands.cpp.obj
@@ -205,7 +205,7 @@ commands.obj: commands.cpp.obj
 
 # target to build an object file
 commands.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/commands.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/commands.cpp.obj
 .PHONY : commands.cpp.obj
 
 commands.i: commands.cpp.i
@@ -213,7 +213,7 @@ commands.i: commands.cpp.i
 
 # target to preprocess a source file
 commands.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/commands.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/commands.cpp.i
 .PHONY : commands.cpp.i
 
 commands.s: commands.cpp.s
@@ -221,7 +221,7 @@ commands.s: commands.cpp.s
 
 # target to generate assembly for a file
 commands.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/commands.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/commands.cpp.s
 .PHONY : commands.cpp.s
 
 eventHandler.obj: eventHandler.cpp.obj
@@ -229,7 +229,7 @@ eventHandler.obj: eventHandler.cpp.obj
 
 # target to build an object file
 eventHandler.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/eventHandler.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/eventHandler.cpp.obj
 .PHONY : eventHandler.cpp.obj
 
 eventHandler.i: eventHandler.cpp.i
@@ -237,7 +237,7 @@ eventHandler.i: eventHandler.cpp.i
 
 # target to preprocess a source file
 eventHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/eventHandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/eventHandler.cpp.i
 .PHONY : eventHandler.cpp.i
 
 eventHandler.s: eventHandler.cpp.s
@@ -245,7 +245,7 @@ eventHandler.s: eventHandler.cpp.s
 
 # target to generate assembly for a file
 eventHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/eventHandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/eventHandler.cpp.s
 .PHONY : eventHandler.cpp.s
 
 helper.obj: helper.cpp.obj
@@ -253,7 +253,7 @@ helper.obj: helper.cpp.obj
 
 # target to build an object file
 helper.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/helper.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/helper.cpp.obj
 .PHONY : helper.cpp.obj
 
 helper.i: helper.cpp.i
@@ -261,7 +261,7 @@ helper.i: helper.cpp.i
 
 # target to preprocess a source file
 helper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/helper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/helper.cpp.i
 .PHONY : helper.cpp.i
 
 helper.s: helper.cpp.s
@@ -269,7 +269,7 @@ helper.s: helper.cpp.s
 
 # target to generate assembly for a file
 helper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/helper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/helper.cpp.s
 .PHONY : helper.cpp.s
 
 main.obj: main.cpp.obj
@@ -277,7 +277,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -285,7 +285,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -293,7 +293,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 program.obj: program.cpp.obj
@@ -301,7 +301,7 @@ program.obj: program.cpp.obj
 
 # target to build an object file
 program.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/program.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/program.cpp.obj
 .PHONY : program.cpp.obj
 
 program.i: program.cpp.i
@@ -309,7 +309,7 @@ program.i: program.cpp.i
 
 # target to preprocess a source file
 program.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/program.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/program.cpp.i
 .PHONY : program.cpp.i
 
 program.s: program.cpp.s
@@ -317,7 +317,7 @@ program.s: program.cpp.s
 
 # target to generate assembly for a file
 program.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/program.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/program.cpp.s
 .PHONY : program.cpp.s
 
 resourceHandler.obj: resourceHandler.cpp.obj
@@ -325,7 +325,7 @@ resourceHandler.obj: resourceHandler.cpp.obj
 
 # target to build an object file
 resourceHandler.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/resourceHandler.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/resourceHandler.cpp.obj
 .PHONY : resourceHandler.cpp.obj
 
 resourceHandler.i: resourceHandler.cpp.i
@@ -333,7 +333,7 @@ resourceHandler.i: resourceHandler.cpp.i
 
 # target to preprocess a source file
 resourceHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/resourceHandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/resourceHandler.cpp.i
 .PHONY : resourceHandler.cpp.i
 
 resourceHandler.s: resourceHandler.cpp.s
@@ -341,7 +341,7 @@ resourceHandler.s: resourceHandler.cpp.s
 
 # target to generate assembly for a file
 resourceHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/resourceHandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/resourceHandler.cpp.s
 .PHONY : resourceHandler.cpp.s
 
 shader.obj: shader.cpp.obj
@@ -349,7 +349,7 @@ shader.obj: shader.cpp.obj
 
 # target to build an object file
 shader.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/shader.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/shader.cpp.obj
 .PHONY : shader.cpp.obj
 
 shader.i: shader.cpp.i
@@ -357,7 +357,7 @@ shader.i: shader.cpp.i
 
 # target to preprocess a source file
 shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/shader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/shader.cpp.i
 .PHONY : shader.cpp.i
 
 shader.s: shader.cpp.s
@@ -365,7 +365,7 @@ shader.s: shader.cpp.s
 
 # target to generate assembly for a file
 shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/shader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/shader.cpp.s
 .PHONY : shader.cpp.s
 
 stb_image.obj: stb_image.cpp.obj
@@ -373,7 +373,7 @@ stb_image.obj: stb_image.cpp.obj
 
 # target to build an object file
 stb_image.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/stb_image.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/stb_image.cpp.obj
 .PHONY : stb_image.cpp.obj
 
 stb_image.i: stb_image.cpp.i
@@ -381,7 +381,7 @@ stb_image.i: stb_image.cpp.i
 
 # target to preprocess a source file
 stb_image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/stb_image.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/stb_image.cpp.i
 .PHONY : stb_image.cpp.i
 
 stb_image.s: stb_image.cpp.s
@@ -389,7 +389,7 @@ stb_image.s: stb_image.cpp.s
 
 # target to generate assembly for a file
 stb_image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/stb_image.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/stb_image.cpp.s
 .PHONY : stb_image.cpp.s
 
 texture.obj: texture.cpp.obj
@@ -397,7 +397,7 @@ texture.obj: texture.cpp.obj
 
 # target to build an object file
 texture.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/texture.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/texture.cpp.obj
 .PHONY : texture.cpp.obj
 
 texture.i: texture.cpp.i
@@ -405,7 +405,7 @@ texture.i: texture.cpp.i
 
 # target to preprocess a source file
 texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/texture.cpp.i
 .PHONY : texture.cpp.i
 
 texture.s: texture.cpp.s
@@ -413,7 +413,7 @@ texture.s: texture.cpp.s
 
 # target to generate assembly for a file
 texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.exe.dir\build.make CMakeFiles/sowa.exe.dir/texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sowa.dir\build.make CMakeFiles/sowa.dir/texture.cpp.s
 .PHONY : texture.cpp.s
 
 # Help Target
@@ -424,7 +424,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... sowa.exe
+	@echo ... sowa
 	@echo ... Light.obj
 	@echo ... Light.i
 	@echo ... Light.s
